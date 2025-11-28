@@ -60,7 +60,7 @@ public class TicTacToe implements ActionListener {
         for (int i = 0; i < 9; i++) {
             if (e.getSource() == buttons[i]) {
                 if (player1_turn) {
-                    if (buttons[i].getText() == "") {
+                    if (buttons[i].getText().equals("")) {
                         buttons[i].setForeground(new Color(255, 0, 0));
                         buttons[i].setText("X");
                         player1_turn = false;
@@ -69,11 +69,12 @@ public class TicTacToe implements ActionListener {
                     }
                 }
                 else{
-                    if (buttons[i].getText() == "") {
+                    if (buttons[i].getText().equals("")) {
                         buttons[i].setForeground(new Color(0, 0, 255));
                         buttons[i].setText("O");
                         player1_turn = true;
                         textfield.setText("X turn");
+                        check();
                     }
                 }
 
@@ -198,6 +199,22 @@ public class TicTacToe implements ActionListener {
                         (buttons[4].getText() == "O") &&
                         (buttons[6].getText() == "O")){
                  oWins(2,4,6);        }
+
+        //check for draw
+        boolean boardFull = true;
+        for (int i = 0; i < 9; i++) {
+            if (buttons[i].getText().equals("")) {
+                boardFull = false;
+                break;
+            }
+        }
+        if (boardFull) {
+            textfield.setText("Draw!");
+            for (int i = 0; i < 9; i++) {
+                buttons[i].setEnabled(false);
+            }
+        }
+
     }
     public void xWins(int a, int b, int c){
         buttons[a].setBackground(Color.GREEN);
