@@ -135,9 +135,9 @@ public class TicTacToe implements ActionListener {
             xWins(3,4,5);
         }
         if(
-                        (buttons[6].getText() == "X") &&
-                        (buttons[7].getText() == "X") &&
-                        (buttons[8].getText() == "X")){
+                        (buttons[6].getText().equals("X")) &&
+                        (buttons[7].getText().equals("X")) &&
+                        (buttons[8].getText().equals("X"))){
                     xWins(6,7,8);
         }
         if(
@@ -173,51 +173,51 @@ public class TicTacToe implements ActionListener {
         //check O win conditions
 
         if(
-                        (buttons[0].getText().equals("0")) &&
-                        (buttons[1].getText().equals("0")) &&
-                        (buttons[2].getText().equals("0"))){
+                        (buttons[0].getText().equals("O")) &&
+                        (buttons[1].getText().equals("O")) &&
+                        (buttons[2].getText().equals("O"))){
                  oWins(0,1,2);
         }
         if(
-                        (buttons[3].getText().equals("0")) &&
-                        (buttons[4].getText().equals("0")) &&
-                        (buttons[5].getText().equals("0"))){
+                        (buttons[3].getText().equals("O")) &&
+                        (buttons[4].getText().equals("O")) &&
+                        (buttons[5].getText().equals("O"))){
                  oWins(3,4,5);
         }
         if(
-                        (buttons[6].getText().equals("0")) &&
-                        (buttons[7].getText().equals("0")) &&
-                        (buttons[8].getText().equals("0"))){
+                        (buttons[6].getText().equals("O")) &&
+                        (buttons[7].getText().equals("O")) &&
+                        (buttons[8].getText().equals("O"))){
                  oWins(6,7,8);
         }
         if(
-                        (buttons[0].getText().equals("0")) &&
-                        (buttons[3].getText().equals("0")) &&
-                        (buttons[6].getText().equals("0"))){
+                        (buttons[0].getText().equals("O")) &&
+                        (buttons[3].getText().equals("O")) &&
+                        (buttons[6].getText().equals("O"))){
                  oWins(0,3,6);
         }
         if(
-                        (buttons[1].getText().equals("0")) &&
-                        (buttons[4].getText().equals("0")) &&
-                        (buttons[7].getText().equals("0"))){
+                        (buttons[1].getText().equals("O")) &&
+                        (buttons[4].getText().equals("O")) &&
+                        (buttons[7].getText().equals("O"))){
                  oWins(1,4,7);
         }
         if(
-                        (buttons[2].getText().equals("0")) &&
-                        (buttons[5].getText().equals("0")) &&
-                        (buttons[8].getText().equals("0"))){
+                        (buttons[2].getText().equals("O")) &&
+                        (buttons[5].getText().equals("O")) &&
+                        (buttons[8].getText().equals("O"))){
                   oWins(2,5,8);
         }
         if(
-                        (buttons[0].getText().equals("0")) &&
-                        (buttons[4].getText().equals("0")) &&
-                        (buttons[8].getText().equals("0"))){
+                        (buttons[0].getText().equals("O")) &&
+                        (buttons[4].getText().equals("O")) &&
+                        (buttons[8].getText().equals("O"))){
                  oWins(0,4,8);
         }
         if(
-                        (buttons[2].getText().equals("0")) &&
-                        (buttons[4].getText().equals("0")) &&
-                        (buttons[6].getText().equals("0"))){
+                        (buttons[2].getText().equals("O")) &&
+                        (buttons[4].getText().equals("O")) &&
+                        (buttons[6].getText().equals("O"))){
                  oWins(2,4,6);        }
 
         //check for draw
@@ -263,6 +263,10 @@ public class TicTacToe implements ActionListener {
             buttons[i].setText("");
             buttons[i].setEnabled(true);
             buttons[i].setBackground(UIManager.getColor("Button.background")); //prevents background color from going gray
+            buttons[i].setBorder(BorderFactory.createCompoundBorder(
+                    BorderFactory.createLineBorder(Color.DARK_GRAY, 3),
+                    BorderFactory.createRaisedBevelBorder()
+            ));
         }
 
         // Reset title
