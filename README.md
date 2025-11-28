@@ -20,3 +20,29 @@ Open the project in your IDE (IntelliJ IDEA recommended)
 Run the Main.java file
 
 Alternatively, compile and run from the command line:
+bashjavac src/Main.java src/TicTacToe.java
+java -cp src Main
+
+How to Play
+
+The game randomly decides who goes first (X or O)
+Click on any empty square to place your mark
+Players alternate turns automatically
+The game announces the winner when three marks align
+Winning squares are highlighted in green
+
+Project Structure:
+
+TicTacToe/
+├── src/
+│   ├── Main.java        # Entry point
+│   └── TicTacToe.java   # Game logic and GUI
+└── TicTacToe.iml        # IntelliJ project file
+
+Future Enhancements:
+
+Add a reset/new game button
+Implement draw detection
+Add single-player mode with AI opponent
+Keep track of win statistics
+
